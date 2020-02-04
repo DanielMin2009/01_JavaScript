@@ -1,177 +1,110 @@
 /* ============================BEGIN COMMON STYLES==============================*/
 
 body {
-    line-height     : 1;
-    font-family     : 'Courier New', Courier, monospace !important;
-    background-color: #fff;
-}
-
-h1 {
+    line-height: 1;
+    font-family: 'Courier New', Courier, monospace !important;
     color      : #425363;
-    font-weight: 100;
-    text-align : center;
-    padding    : 1em;
 }
 
 #container {
-    width : 70%;
-    margin: 0 auto;
-}
-
-#container>label {
-    margin-top: 12px !important:
-}
-
-#container>input {
-    padding      : 8px;
-    width        : 30%;
-    margin-bottom: 8px;
-}
-
-#container>button {
-    padding    : 12px 24px;
-    font-family: 'Courier New', Courier, monospace !important;
-}
-
-#container>p {
-    padding    : 12px 0;
-    font-weight: 800;
+    width      : 80%;
+    margin-left: 6vw;
+    margin-top : 10vh;
 }
 
 
-/*===================Calculadora Styles==================*/
-
-
-/*#calculadoraGrid {
-    background-color: rgba(233, 239, 244, 0.2);
-    border          : 1px solid #425363;
-    border-radius   : 4px;
-    padding         : 4%;
-    width           : 70vw;
-    margin          : auto;
+#container h1 {
+    font-size  : 1.55em;
+    font-weight: 600;
 }
 
 
-
-#calculadoraGrid div:last-child {
-    margin-bottom: 0px;
+#container>input,
+#simpleFormOutline>input {
+    padding      : 20px;
+    width        : 40%;
+    margin-bottom: 16px;
+    border       : 1px solid #425363;
+    border-radius: 3px;
+    margin-top   : 6px;
 }
 
-#devices {
-    display        : flex;
-    flex-direction : row;
-    flex-wrap      : nowrap;
-    justify-content: space-between;
-    align-items    : center;
-    align-content  : stretch;
-    margin-bottom  : 20px;
-}
+#container>button,
+#simpleFormOutline>button {
 
-#operators,
-#numbers {
-    display        : flex;
-    flex-direction : row;
-    flex-wrap      : nowrap;
-    justify-content: space-between;
-    align-items    : center;
-    align-content  : stretch;
-}
-
-#operators button,
-#numbers button {
+    padding           : 12px 24px;
+    font-family       : 'Courier New', Courier, monospace !important;
     border            : 1px solid #425363;
     padding           : 20px;
     color             : #425363;
-    border-radius     : 5px;
-    font-size         : 22px;
+    border-radius     : 3px;
+    font-size         : 16px;
     cursor            : pointer;
     box-shadow        : inset 0 0 0 0 #425363;
     -webkit-transition: ease-out 0.15s;
     -moz-transition   : ease-out 0.15s;
     transition        : ease-out 0.15s;
-
-    height: 90px;
+    width             : 150px;
+    margin-bottom     : 10px;
 }
 
-#operators button:hover,
-#numbers button:hover {
+#container>button:hover,
+#simpleFormOutline>button:hover {
     box-shadow: inset 0 0 0 50px #425363;
     color     : #FFF;
 }
 
-
-#operators button {
-    width: 13%;
+#container>p {
+    padding    : 12px 0;
+    font-weight: 800;
+    font-size  : 2em;
 }
 
-#numbers button {
-    width: 9%;
+#answer {
+    margin-top: 20px;
+    font-size : 1.4em;
 }
 
-input,
-#devices div {
-    border       : 1px solid #425363;
-    border-radius: 4px;
-    color        : #425363;
-    font-family  : 'Courier New', Courier, monospace !important;
-    font-size    : 22px;
-    padding      : 0 20px;
-    width        : 27%;
-    height       : 90px;
-}
-
-#devices div:nth-child(2) {
-    width : 10%;
-    margin: 0 1% 0 2%;
-}
-
-#devices div {
-    line-height: 90px;
-    text-align : center;
-    font-size  : 22px;
-    font-weight: bold;
-    color      : #425363;
-}
-
-.operator {
-    background-color  : #e73845;
-    border            : 1px solid #e73845 !important;
-    box-shadow        : inset 0 0 0 0 #e73845;
-    color             : #fff !important;
-    -webkit-transition: ease-out 0.15s;
-    -moz-transition   : ease-out 0.15s;
-    transition        : ease-out 0.15s;
-}
-
-.operator::after {
-    box-shadow: inset 0 0 0 50px #e73845;
+.answer {
+    margin-top: 20px;
 }
 
 
-input:nth-child(3) {
-    margin: 0 2% 0 1%;
+.red,
+.blue,
+.green {
+    font-weight: 500;
 }
 
-input::-webkit-input-placeholder {
-    color      : #425363;
-    font-family: 'Courier New', Courier, monospace !important;
-    font-size  : 16px;
+.red {
+    color: #e73845;
 }
 
-input::-moz-placeholder {
-    color      : #425363;
-    font-family: 'Courier New', Courier, monospace !important;
-    font-size  : 16px;
+.green {
+    color: forestgreen;
 }
 
-input:-ms-input-placeholder {
-    color      : #425363;
-    font-family: 'Courier New', Courier, monospace !important;
-    font-size  : 16px;
+.blue {
+    color: #00b1ff;
 }
 
-input:-moz-placeholder {
-    color      : #425363;
-    font-family: 'Courier New', Courier, monospace !important;
-    font-size  : 16px;
-}*/
+.dnone {
+    display: none;
+}
+
+.dblock {
+    display: block;
+}
+
+/*============================END OF COMMON STYLES==============================*/
+
+.gridTables {
+    display              : grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap      : 20px;
+    grid-row-gap         : 20px;
+    justify-items        : stretch;
+    align-items          : stretch;
+}
+
+/*============================END OF COMMON STYLES==============================*/
