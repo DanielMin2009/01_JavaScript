@@ -12,12 +12,10 @@ body {
     margin-top : 10vh;
 }
 
-
 #container h1 {
     font-size  : 1.55em;
     font-weight: 600;
 }
-
 
 #container>input,
 #simpleFormOutline>input {
@@ -30,8 +28,8 @@ body {
 }
 
 #container>button,
-#simpleFormOutline>button {
-
+#simpleFormOutline>button,
+.button {
     padding           : 12px 24px;
     font-family       : 'Courier New', Courier, monospace !important;
     border            : 1px solid #425363;
@@ -49,9 +47,24 @@ body {
 }
 
 #container>button:hover,
-#simpleFormOutline>button:hover {
+#simpleFormOutline>button:hover,
+.button:hover {
     box-shadow: inset 0 0 0 50px #425363;
     color     : #FFF;
+}
+
+.buttonOff {
+    opacity: 30%;
+}
+
+
+
+.button:disabled,
+.buttonOff:hover {
+    cursor    : default !important;
+    opacity   : 30%;
+    box-shadow: inset 0 0 0 0px #FFF !important;
+    color     : #425363 !important;
 }
 
 #container>p {
@@ -60,21 +73,63 @@ body {
     font-size  : 2em;
 }
 
-#answer {
-    margin-top: 20px;
-    font-size : 1.4em;
-}
-
+#answer,
 .answer {
-    margin-top: 20px;
+    margin-top : 20px;
+    font-size  : 1.4em;
+    line-height: 148%;
 }
-
 
 .red,
 .blue,
 .green {
-    font-weight: 500;
+    font-weight: 600;
 }
+
+.bgRed,
+.bgGreen,
+.bgBlue {
+    -webkit-transition: ease-out 0.15s;
+    -moz-transition   : ease-out 0.15s;
+    transition        : ease-out 0.15s;
+}
+
+.bgRed {
+    background-color: #e73845;
+    box-shadow      : inset 0 0 0 0 #e73845;
+    color           : #fff !important;
+    border          : 1px solid #e73845 !important;
+}
+
+.bgRed:hover {
+    box-shadow: inset 0 0 0 50px #FFF !important;
+    color     : #e73845 !important;
+}
+
+.bgGreen {
+    background-color: forestgreen;
+    box-shadow      : inset 0 0 0 0 forestgreen;
+    color           : #fff !important;
+    border          : 1px solid forestgreen !important;
+}
+
+.bgGreen:hover {
+    box-shadow: inset 0 0 0 50px #FFF !important;
+    color     : forestgreen !important;
+}
+
+.bgBlue {
+    background-color: #00b1ff;
+    box-shadow      : inset 0 0 0 0 #00b1ff;
+    color           : #fff !important;
+    border          : 1px solid #00b1ff !important;
+}
+
+.bgBlue:hover {
+    box-shadow: inset 0 0 0 50px #fff !important;
+    color     : #00b1ff !important;
+}
+
 
 .red {
     color: #e73845;
@@ -90,6 +145,10 @@ body {
 
 .dnone {
     display: none;
+}
+
+.dlineblock {
+    display: inline-block;
 }
 
 .dblock {
@@ -108,3 +167,140 @@ body {
 }
 
 /*============================END OF COMMON STYLES==============================*/
+
+/*===================Calculadora Styles==================*/
+
+
+#calculadoraGrid {
+    background-color: rgba(233, 239, 244, 0.2);
+    border          : 1px solid #425363;
+    border-radius   : 4px;
+    padding         : 4%;
+    width           : 100%;
+    margin          : auto;
+}
+
+
+
+#calculadoraGrid div:last-child {
+    margin-bottom: 0px;
+}
+
+#devices {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    justify-content: space-between;
+    align-items    : center;
+    align-content  : stretch;
+    margin-bottom  : 20px;
+}
+
+#operators,
+#numbers {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    justify-content: space-between;
+    align-items    : center;
+    align-content  : stretch;
+}
+
+#operators button,
+#numbers button {
+    border            : 1px solid #425363;
+    padding           : 20px;
+    color             : #425363;
+    border-radius     : 5px;
+    font-size         : 22px;
+    cursor            : pointer;
+    box-shadow        : inset 0 0 0 0 #425363;
+    -webkit-transition: ease-out 0.15s;
+    -moz-transition   : ease-out 0.15s;
+    transition        : ease-out 0.15s;
+
+    height: 90px;
+}
+
+#operators button:hover,
+#numbers button:hover {
+    box-shadow: inset 0 0 0 50px #425363;
+    color     : #FFF;
+}
+
+
+#operators button {
+    width: 13%;
+}
+
+#numbers button {
+    width: 9%;
+}
+
+input,
+#devices div {
+    border       : 1px solid #425363;
+    border-radius: 4px;
+    color        : #425363;
+    font-family  : 'Courier New', Courier, monospace !important;
+    font-size    : 22px;
+    padding      : 0 20px;
+    width        : 27%;
+    height       : 90px;
+}
+
+#devices div:nth-child(2) {
+    width : 10%;
+    margin: 0 1% 0 2%;
+}
+
+#devices div {
+    line-height: 90px;
+    text-align : center;
+    font-size  : 22px;
+    font-weight: bold;
+    color      : #425363;
+}
+
+.operator {
+    background-color  : #e73845;
+    border            : 1px solid #e73845 !important;
+    box-shadow        : inset 0 0 0 0 #e73845;
+    color             : #fff !important;
+    -webkit-transition: ease-out 0.15s;
+    -moz-transition   : ease-out 0.15s;
+    transition        : ease-out 0.15s;
+}
+
+.operator::after {
+    box-shadow: inset 0 0 0 50px #e73845;
+}
+
+
+input:nth-child(3) {
+    margin: 0 2% 0 1%;
+}
+
+input::-webkit-input-placeholder {
+    color      : #425363;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size  : 16px;
+}
+
+input::-moz-placeholder {
+    color      : #425363;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size  : 16px;
+}
+
+input:-ms-input-placeholder {
+    color      : #425363;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size  : 16px;
+}
+
+input:-moz-placeholder {
+    color      : #425363;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size  : 16px;
+}

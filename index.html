@@ -5,7 +5,7 @@
     <title>Java Script | It Academy</title>
     <meta charset="utf-8" />
     <link href="css/style.css" rel="stylesheet" />
-    <script src="js/scripts.js"></script>
+    <script src="js/calculator.js"></script>
 </head>
 
 <body>
@@ -15,26 +15,54 @@
 
             <h1>Exercici JS 01 | IT Academy</h1>
 
-            <form id="simpleFormOutline">
+            <form id="simpleFormOutline" name="myForm">
 
                 <!--<label for="txtSample">Sample text</label><br>
                 <input type="text" id="txtSample" /><br>-->
 
-                <button onclick="runFunction01()" type="button" id="click01">Click 01</button>
-                <button onclick="runFunction02()" type="button" id="click02">Click 02</button>
-                <button onclick="runFunction03()" type="button" id="click03">Click 03</button>
-                <button onclick="runFunction04()" type="button" id="click04">Click 04</button>
-                <button onclick="runFunction05()" type="button" id="click05">Click 05</button>
-                <button onclick="runFunction06()" type="button" id="click06">Click 06</button>
-                <button onclick="changeFunction06()" type="button" id="click06B" class="dnone">Change 06</button>
-                <button onclick="clearData()" type="button">Clear</button>
+                <button type="button" name="click01" id="click01" class="button">Click 01</button>
+                <button type="button" name="click02" id="click02" class="button">Click 02</button>
+                <button type="button" name="click03" id="click03" class="button">Click 03</button>
+                <button type="button" name="click04" id="click04" class="button">Click 04</button>
+                <button type="button" name="click05" id="click05" class="button">Click 05</button>
+                <button type="button" name="click06" id="click06" class="button">Click 06</button>
+                <button type="button" name="click06B" id="click06B" class="dnone button">Change 06</button>
+                <button type="button" name="click06C" id="click06C" class="dnone button">Vocals 06</button>
+                <button type="button" name="click07" id="click07" class="button">Click 07</button>
+                <button type="button" name="click08" id="click08" class="button">Click 08</button>
+                <button type="button" name="clear" id="clear" class="End">Clear</button>
 
             </form>
 
-            <div id="answer"></div>
+            <div id="answer"><span id="commonPhrase" class="dnone">Tinc un cotxe de color</span></div>
+
+            <div id="calculadoraGrid" class="dnone">
+
+                <div id="devices">
+                    <input type="text" id="n1" placeholder="write one number" />
+                    <div id="operation"></div>
+                    <input type="text" id="n2" placeholder="write another number" />
+                    <div id="result"></div>
+                </div>
+    
+    
+                <div id="operators">
+                    <button id="add" class="calcButton" onclick="callOperation('+')">&plus;</button>
+                    <button id="subtract" class="calcButton" onclick="callOperation('-')">&minus;</button>
+                    <button id="multiply" class="calcButton" onclick="callOperation('*')">*</button>
+                    <button id="divide" class="calcButton" onclick="callOperation('/')">&divide;</button>
+                    <button id="modulus" class="calcButton" onclick="callOperation('%')">&#37;</button>
+                    <button id="point" class="calcButton" onclick="clearDataCalculator()">C</button>
+                    <button id="equals" class="calcButton isEquals" onclick="calculate()">&equals;</button>
+                </div>
+    
+    
+            </div>
 
         </div>
     </div>
+    <script src="js/scripts.js"></script>
+
 </body>
 
 </html>
