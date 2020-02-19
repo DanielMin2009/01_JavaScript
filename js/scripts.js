@@ -24,7 +24,6 @@ button07.addEventListener('click', runFunction07, true);
 button08.addEventListener('click', calculate, true);
 buttonClear.addEventListener('click', clearData, true);
 
-
 function escalable(button) {
     let buttonElements = document.querySelectorAll(".button");
     for (var i = 0; i < buttonElements.length; i++) {
@@ -138,21 +137,20 @@ function runFunction07() {
 }
 
 function clearData() {
+
     document.getElementById("answer").innerHTML = "";
 
     //To function06
     document.getElementById("click06B").setAttribute("class", "dnone");
     document.getElementById("click06C").setAttribute("class", "dnone");
-    document.getElementById("click06").setAttribute("class", "dlineblock");
+    //document.getElementById("click06").setAttribute("class", "dlineblock");
     document.getElementById("calculadoraGrid").setAttribute("class", "dnone");
 
     var buttonElements = document.querySelectorAll(".button");
 
     disabled = true;
 
-    for (var i = 1; i < buttonElements.length; i++) {
+    for (var i = 0; i < buttonElements.length; i++) {
         buttonElements[i].disabled = false;
     }
-
-
 }
